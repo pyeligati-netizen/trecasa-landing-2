@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <!-- v3-20250917121435 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trecasa — Everything Included</title>
+  <meta name="description" content="Not just modulars. Everything included — modulars, ceilings, paint, electrical, styling and more under one roof.">
+  <meta property="og:title" content="Trecasa — Everything Included">
+  <meta property="og:description" content="Families walk through their homes in 360° before work starts — every corner experienced.">
+  <meta property="og:image" content="https://picsum.photos/seed/trecasa-hero/1200/630">
+  <meta name="theme-color" content="#0F3D2E">
+  <style>
+    :root{
+      --bg:#0F3D2E;        /* deep green */
+      --gold:#C9A227;      /* brand gold */
+      --text:#F7F5F2;      /* off-white */
+      --paper:#F6F4EF;     /* light paper */
+      --ink:#113428;       /* deep ink */
+      --muted:#6b7a74;     /* muted ink */
+      --line:#e8e4db;      /* subtle line */
+      --dot:#E51E1E;       /* trecasa red dot */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      color:var(--text); background:var(--bg); line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{ max-width:1160px; margin:0 auto; padding:24px }
+    .pill{ font-size:12px; padding:6px 10px; border:1px dashed #ffffff2e; border-radius:999px }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 16px; border-radius:14px; font-weight:600;
+      border:1px solid color-mix(in oklab, var(--gold), transparent 40%);
+      background:color-mix(in oklab, var(--gold), black 15%);
+      color:#111; cursor:pointer; transition:.2s transform ease, .2s opacity ease;
+    }
+    .btn:hover{ transform:translateY(-1px); opacity:.95 }
+    .btn.alt{ background:transparent; color:var(--text); border-color:#ffffff3a }
+    header.nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:color-mix(in srgb, var(--bg) 92%, transparent 8%);
+      border-bottom:1px solid #ffffff18;
+    }
+    .nav .row{ display:flex; align-items:center; justify-content:space-between }
+    .logo{ display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:.25px }
+    .logo .dot{ width:10px; height:10px; border-radius:50%; background:var(--dot); display:inline-block }
+    .hero{ position:relative; overflow:hidden; border-bottom:1px solid #ffffff18 }
+    .hero .container{ padding-top:56px; padding-bottom:56px }
+    .hero h1{ font-size: clamp(28px, 4vw, 48px); margin:0 0 12px }
+    .hero p{ margin:0 0 20px; max-width:720px; color:#efece7 }
+    .hero .media{ margin-top:28px; border-radius:18px; overflow:hidden; border:1px solid #ffffff22; background:#0c0e0e; aspect-ratio:16/9; display:grid; place-items:center }
+    .badges{ display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; opacity:.92 }
+    .section{ padding:40px 0 }
+    /* Light surfaces */
+    .light{ background:var(--paper); color:var(--ink) }
+    .light .muted{ color:var(--muted) }
+    .light h2, .light h3, .light h4, .light p, .light a{ color:var(--ink) }
+    .title{ font-size: clamp(24px, 3vw, 40px); margin:0 0 18px }
+    .grid{ display:grid; gap:16px }
+    /* Why cards */
+    .why-grid{ grid-template-columns: 1fr; }
+    @media (min-width:900px){ .why-grid{ grid-template-columns: repeat(4, 1fr) } }
+    .card{
+      background: white; color:var(--ink);
+      border:1px solid var(--line); border-radius:16px; padding:18px;
+      box-shadow: 0 2px 0 #e9e6df;
+    }
+    .card .icon{ font-size:22px; opacity:.9 }
+    .card h3{ margin:8px 0 6px; font-size:20px }
+    .card p{ margin:0; color:#5e6b65 }
+    /* Stats row */
+    .stats-grid{ grid-template-columns: 1fr; }
+    @media (min-width:900px){ .stats-grid{ grid-template-columns: repeat(5, 1fr) } }
+    .stat{ text-align:center; padding:20px; background:white; border:1px solid var(--line); border-radius:16px; box-shadow: 0 2px 0 #e9e6df }
+    .stat h4{ margin:0 0 6px; font-size:18px; color:var(--ink) }
+    .stat p{ margin:0; font-size:14px; color:var(--muted) }
+    /* Stories */
+    .stories-grid{ grid-template-columns: 1fr; }
+    @media (min-width:900px){ .stories-grid{ grid-template-columns: 1fr 1fr } }
+    .story{
+      background:white; border:1px solid var(--line); border-radius:16px; overflow:hidden; color:var(--ink);
+      display:grid; grid-template-columns: 1fr; gap:0;
+      box-shadow:0 2px 0 #e9e6df;
+    }
+    .story .body{ padding:16px }
+    .story h3{ margin:2px 0 6px; font-size:22px }
+    .story .meta{ color:#5e6b65; margin:0 0 8px; font-size:14px }
+    .story .quote{ color:#2a3b35; font-style:italic; opacity:.9; margin:0 0 14px }
+    .story .actions{ padding:0 16px 16px }
+    /* Timeline */
+    .timeline{ position:relative; display:grid; grid-template-columns: 1fr; gap:30px; }
+    @media (min-width:980px){ .timeline{ grid-template-columns: 1fr 4px 1fr; } }
+    .time-line{ background:var(--ink); opacity:.35; width:4px; border-radius:2px; margin:0 auto; }
+    .time-col{ display:grid; gap:28px }
+    .phase{ background:white; border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 2px 0 #e9e6df }
+    .phase h4{ margin:0 0 6px; font-size:20px; color:var(--ink) }
+    .phase p{ margin:0 0 10px; color:#586660 }
+    .payment{ background:#f3efe7; border:1px solid var(--line); padding:12px; border-radius:12px; color:#3d4b46 }
+    /* Red Dot section */
+    .reddot{ text-align:center; padding:56px 0; background:var(--paper); color:var(--ink); border-top:1px solid var(--line) }
+    .reddot .dot{ width:10px; height:10px; border-radius:50%; background:var(--dot); margin:0 auto 12px }
+    .reddot h3{ margin:0 0 10px; font-size:32px }
+    .reddot p{ margin:0 auto; max-width:760px; color:#42524c }
+    /* Lead form + footer on dark bg */
+    .lead{ background:#0c1212; border:1px solid #ffffff1d; border-radius:16px; padding:18px; color:#fff }
+    form .row{ display:grid; gap:12px; grid-template-columns:1fr }
+    @media (min-width:700px){ form .row{ grid-template-columns:1fr 1fr } }
+    label{ font-weight:600; font-size:14px }
+    input, textarea{ width:100%; padding:12px; border-radius:12px; border:1px solid #ffffff20; background:#0f1414; color:#fff }
+    textarea{ min-height:110px; resize:vertical }
+    footer{ padding:28px 0 40px; color:#cfcac1; font-size:14px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap }
+    .footer-dot{ width:12px; height:12px; border-radius:50%; background:var(--dot); display:inline-block; vertical-align:-1px }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container row">
+      <div class="logo">
+        <span class="dot"></span>
+        <span>Trecasa Architecture &amp; Interiors</span>
+      </div>
+      <nav>
+        <a href="#why">Why Trecasa</a>&nbsp;&nbsp;
+        <a href="#stories">Stories</a>&nbsp;&nbsp;
+        <a href="#process">Work Structure</a>&nbsp;&nbsp;
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Not just modulars. <span style="color:var(--gold)">Everything included.</span></h1>
+      <p>Modulars, ceilings, paint, electrical, styling — and literally any home work under one roof. Families walk through their homes in <strong>360°</strong> before work starts, so every decision is clear.</p>
+      <div class="badges">
+        <span class="pill">45-day delivery promise</span>
+        <span class="pill">Vastu-aware planning</span>
+        <span class="pill">Design–Build–Style</span>
+      </div>
+      <div class="hero media" aria-label="Project preview" style="margin-top:18px">
+        <img alt="" src="https://picsum.photos/seed/trecasa-hero/1280/720">
+      </div>
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn" href="#contact">Get a quote</a>
+        <a class="btn alt" href="#why">Why Trecasa?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY Trecasa -->
+  <section id="why" class="section light">
+    <div class="container">
+      <h2 class="title">⚙️ Why Trecasa</h2>
+      <div class="grid why-grid">
+        <div class="card">
+          <div class="icon">🪚</div>
+          <h3>Design‑Heavy. Budget‑Smart.</h3>
+          <p>We begin by understanding your style, then map materials and finishes with smart alternatives — right at the initial quote itself. Every rupee is placed where it matters most, so you get the look you want without overspending.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🏠</div>
+          <h3>One Partner. Every Detail.</h3>
+          <p>We handle true end‑to‑end interiors — from modulars and ceilings to on‑site custom work and styling. You get a single point of contact guiding everything, right until your home is fully delivered.</p>
+        </div>
+        <div class="card">
+          <div class="icon">✨</div>
+          <h3>We Don’t Disappear After Design.</h3>
+          <p>The best designs fail if execution goes wrong. At Trecasa, your VR design intent is carried through to reality. Our project managers remain on‑site till the last hinge clicks — accountability from start to handover.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📏</div>
+          <h3>Not 100 Homes. Just Yours.</h3>
+          <p>Unlike assembly‑line firms with cookie‑cutter outputs, Trecasa takes on fewer projects. That way, we can personalise, refine, and perfect every detail — just like our Red Dot philosophy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof / Stats -->
+  <section class="section light" style="padding-top:10px">
+    <div class="container">
+      <div class="grid stats-grid">
+        <div class="stat">
+          <h4>350+ Happy Homes in Hyderabad</h4>
+          <p>Backed by 10+ years of trust and design excellence.</p>
+        </div>
+        <div class="stat">
+          <h4>45‑Day Delivery Promise</h4>
+          <p>Or we pay ₹5,000 per week — accountability guaranteed.</p>
+        </div>
+        <div class="stat">
+          <h4>&lt;3% Cost Deviation</h4>
+          <p>Transparent BOQs and milestone‑based payments.</p>
+        </div>
+        <div class="stat">
+          <h4>VR Walkthroughs Before Build</h4>
+          <p>See your home in 360° and finalise details upfront.</p>
+        </div>
+        <div class="stat">
+          <h4>Preferred by Top Communities</h4>
+          <p>Jayabheri, My Home, Aparna &amp; more.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Client Stories -->
+  <section id="stories" class="section light" style="padding-top:10px">
+    <div class="container">
+      <h2 class="title">👥 Recent Client Stories</h2>
+      <div class="grid stories-grid">
+        <article class="story">
+          <img alt="Sarath — Jayabheri Nirvana" src="https://picsum.photos/seed/nirvana-sarath/960/540">
+          <div class="body">
+            <h3>Sarath’s Home — Jayabheri Nirvana</h3>
+            <p class="meta">3BHK • Hidden Doors &amp; Entertainer’s Nook</p>
+            <p class="quote">“A plan woven by flow, not fragments.”</p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="#contact">View Full Story</a>
+          </div>
+        </article>
+        <article class="story">
+          <img alt="Bhagyesh — Thimus’ King Court" src="https://picsum.photos/seed/thimus/960/540">
+          <div class="body">
+            <h3>Bhagyesh’s Home — Thimus’ King Court</h3>
+            <p class="meta">3BHK • Two‑Tone Minimalism • Soft Curves</p>
+            <p class="quote">“Restraint drawn as geometry, softened by curve.”</p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="#contact">View Full Story</a>
+          </div>
+        </article>
+        <article class="story" style="grid-column:1/-1">
+          <img alt="Sanjeev — Econest Primark" src="https://picsum.photos/seed/primark/1200/540">
+          <div class="body">
+            <h3>Sanjeev’s Home — Econest Primark</h3>
+            <p class="meta">3BHK • Kitchen Extension &amp; Curved Kids’ Wardrobe</p>
+            <p class="quote">“Utility shaped as grace, square foot by square foot.”</p>
+          </div>
+          <div class="actions">
+            <a class="btn" href="#contact">View Full Story</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Structure -->
+  <section id="process" class="section light" style="padding-top:10px">
+    <div class="container">
+      <h2 class="title">🛠️ Work Structure</h2>
+      <div class="timeline">
+        <!-- Left column -->
+        <div class="time-col">
+          <div class="phase">
+            <h4>Phase 1: Consultation &amp; Quote (3–5 Days)</h4>
+            <p>Meet us, share your story, and get design + budget options.</p>
+            <div class="payment"><strong>Payment:</strong> 10% Token Advance — locks your project, covers consultation, site checks, and onboarding.</div>
+          </div>
+          <div class="phase">
+            <h4>Phase 3: Execution &amp; Build (45–60 Days)</h4>
+            <p>If factory‑made: production starts, site prepared in parallel. If on‑site: materials arrive, work begins immediately.</p>
+            <div class="payment"><strong>Payment:</strong> 25% During Execution — tied to major installation milestones.</div>
+          </div>
+        </div>
+        <!-- Center line -->
+        <div class="time-line"></div>
+        <!-- Right column -->
+        <div class="time-col">
+          <div class="phase">
+            <h4>Phase 2: Design &amp; VR (1–2 Weeks)</h4>
+            <p>Renders, palettes, VR walkthroughs → iterate until final approval.</p>
+            <div class="payment"><strong>Payment:</strong> 60% on Design Finalisation — after you approve final layouts + BOQ.</div>
+          </div>
+          <div class="phase">
+            <h4>Phase 4: Quality &amp; Handover</h4>
+            <p>Internal checks + your walkthrough. Handover only after fixes + your green light.</p>
+            <div class="payment"><strong>Payment:</strong> 5% Final Handover — released only after snag fixes. Unlike most companies, we hold back 5% until you’re 100% satisfied.</div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:12px; color:#5b6a64">Process and payments shown side‑by‑side along a central timeline for full clarity.</p>
+    </div>
+  </section>
+
+  <!-- Red Dot philosophy -->
+  <section class="reddot">
+    <div class="dot"></div>
+    <h3>Every home deserves a focal point — one detail that makes it yours.</h3>
+    <p>In every space, the eye looks for a point to rest. That’s the Red Dot — a detail so intentional, it defines the whole design. Sometimes it’s a crafted edge, sometimes a curve, sometimes just the way light falls. Small, but powerful enough to make the space unforgettable.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="lead">
+        <h2 style="margin:0 0 10px 0">Get a quick quote</h2>
+        <p style="margin:0 0 14px 0; opacity:.9">No backend needed now — this form will just show a success message. Later we can connect it to Google Forms or email.</p>
+        <form id="leadForm" novalidate>
+          <div class="row">
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Your name">
+            </div>
+            <div>
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" placeholder="Your phone">
+            </div>
+            <div>
+              <label for="location">City / Area</label>
+              <input id="location" name="location" placeholder="e.g., Miyapur, Hyderabad">
+            </div>
+            <div>
+              <label for="budget">Budget (₹)</label>
+              <input id="budget" name="budget" placeholder="e.g., 12,00,000">
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <label for="notes">What do you need?</label>
+            <textarea id="notes" name="notes" placeholder="Kitchen + wardrobes + false ceiling…"></textarea>
+          </div>
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+            <button class="btn" type="submit">Submit</button>
+            <a class="btn alt" href="#top">Back to top</a>
+          </div>
+          <p id="formMsg" style="margin-top:10px; display:none">Thanks! We got your details — we’ll call you soon.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="container">
+    <div>&copy; <span id="year"></span> Trecasa Architecture &amp; Interiors · <span class="footer-dot"></span> Hyderabad</div>
+    <div style="opacity:.85">Everything included — modulars, ceilings, paint, electrical, styling.</div>
+  <div style="opacity:.6;font-size:12px">Build: v3-20250917121435</div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Fake form submit
+    const form = document.getElementById('leadForm');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      form.reset();
+      const m = document.getElementById('formMsg');
+      m.style.display = 'block';
+      setTimeout(()=>{ m.style.display = 'none'; }, 4000);
+    });
+  </script>
+</body>
+</html>
